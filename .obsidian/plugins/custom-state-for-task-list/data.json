@@ -1,0 +1,20 @@
+{
+  "customStates": [
+    {
+      "state": "important",
+      "readingView": "📌"
+    },
+    {
+      "state": "doing",
+      "readingView": "🚧"
+    },
+    {
+      "state": "deferred",
+      "readingView": "😴"
+    },
+    {
+      "state": "removed",
+      "readingView": "🗑"
+    }
+  ]
+}

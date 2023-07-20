@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "timeline-snippet",
+    "cornell"
+  ],
+  "theme": "obsidian",
+  "cssTheme": "Blue Topaz",
+  "baseFontSize": 14
+}
