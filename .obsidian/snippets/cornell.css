@@ -6,6 +6,204 @@ By: Jose Moruno Cadima
 */
 
 
+/*
+
+Cornell Notes
+By: Jose Moruno Cadima aka @sniferl4bs 
+https://youtube.com/sniferl4bs
+v0.2
+*/
+:root {
+    --sticky-note-color: transparent;
+}
+
+/* Font size for footnotes in Cornell notes */
+.cornell .footnotes {
+    font-size: 16px;
+}
+
+/* Styling for the horizontal line separating footnotes */
+.cornell .footnotes>hr {
+    background-color: red !important;
+    height: 2.5rem;
+    visibility: hidden;
+}
+
+/* Styling for the "Resumen" text in the horizontal line */
+.cornell .footnotes>hr:after {
+    content: 'http://www.w3.org/2000/svg';
+    color: skyblue;
+    border-bottom: 2px dashed orangered;
+    visibility: visible;
+    font-size: 22px;
+    padding: 0.1rem;
+    padding-left: 0.1rem;
+    margin-top: 0.2rem;
+}
+
+/* Hide the horizontal line before footnotes */
+.cornell .footnotes>hr:before {
+    visibility: hidden;
+    display: none;
+}
+
+/* Hide the markdown-embed-title in Cornell notes */
+.cornell-clean .markdown-embed-title {
+    display: none;
+}
+
+/* Hide list bullets */
+.cornell .list-bullet {
+    display: none;
+}
+
+/* Custom styling for clean embeds in Cornell notes */
+.cornell .clean-embeds {
+    --embed-background: inherit;
+    --embed-border-left: 0px solid var(--interactive-accent);
+    --embed-border-right: none;
+    --embed-border-top: none;
+    --embed-border-bottom: none;
+    --embed-padding: 0 0 0 0;
+    --embed-font-style: inherit;
+}
+
+.cornell .clean-embeds .markdown-rendered .markdown-embed {
+    max-width: 100%;
+}
+
+.cornell .clean-embeds .markdown-rendered .markdown-embed .markdown-rendered {
+    padding-left: 0;
+}
+
+.cornell .clean-embeds .markdown-embed-link {
+    visibility: hidden;
+}
+
+/* Styling for spaced lines in Cornell notes 
+Desc: Style cornell-notes in Obsidian based on plugin Timeline CSS. 
+Mod Cornell Vault: Jose Moruno Cadima <sniferl4bs> youtube.com/sniferl4bs */
+
+/* Styling for Cornell note lists */
+.cornell ul:not(ul ul) {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    column-gap: 0.9rem;
+    margin: 0.2rem 0;
+}
+
+.cornell ul:not(ul ul) > li:nth-child(3n+1), .cornell ul:not(ul ul) > li:nth-child(3n+2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.1em;
+}
+
+/* Styling for specific list items' content */
+
+/* CLUE - Sticky note */
+
+.cornell ul:not(ul ul) > li:nth-child(3n+1) {
+    align-items: left;
+    grid-column: 1;
+    font-family: Arial, sans-serif;
+    justify-self: left;
+    text-align: left;
+    font-size: 1.1rem;
+    width: 200px;
+    padding: 3px;
+    background-color: #fffbe6;
+    color: black;
+    border: 1px solid #ffc900;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px #ccc;
+    line-height: 1.4;
+}
+
+/* Title */
+.cornell ul:not(ul ul) > li:nth-child(3n+2) {
+    grid-column: 3;
+    position: relative;
+    justify-self: left;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #97CCE8;
+    line-height: 1.3;
+    text-align: justify;
+    word-wrap: break-word;
+    margin-top: 0.3rem;
+    font-size: 1.0rem;
+}
+
+/* Content*/
+.cornell ul:not(ul ul) > li:nth-child(3n) {
+    grid-column: 3;
+    position: relative;
+    justify-self: left;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+/* Styling for the background color and separator lines */
+.cornell ul:not(ul ul) > li:nth-child(3n+1)::before {
+    background-color: var(--background-primary);
+}
+
+.cornell ul:not(ul ul) > li:nth-child(3n+1)::after {
+    background-color: var(--text-normal);
+    opacity: 0.25;
+}
+
+.cornell ul:not(ul ul) > li:nth-child(3n) {
+    position: relative;
+    margin-bottom: 2.7rem;
+    padding-top: 0.3em;
+}
+
+.cornell ul:not(ul ul) > li:nth-child(3n)::after {
+    content: '';
+    position: absolute;
+    border-bottom: 0.1rem dashed var(--text-normal);
+    opacity: 0.1;
+    width: 100%;
+    left: 0;
+    bottom: -2.25rem;
+    transform: translateY(50%);
+}
+
+/* Hide the separator line for the last list item */
+.cornell ul:not(ul ul) > li:nth-child(3n):last-child {
+    margin-bottom: 0.4em;
+}
+
+.cornell ul:not(ul ul) > li:nth-child(3n):last-child::after {
+    display: none;
+}
+
+/* Styling for the middle line in Cornell notes */
+.cornell ul:not(ul ul)::before {
+    content: '';
+    height: 100%;
+    width: 0.1rem;
+    grid-column: 2/span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1000;
+    background-color: var(--text-normal);
+    opacity: 0.1;
+    width: 0.15rem;
+    background-color: transparent;
+    background-image: linear-gradient(var(--text-normal) 60%, rgba(255, 255, 255, 0) 0%);
+    background-position: right;
+    background-size: 0.15rem 1.5rem;
+    background-repeat: repeat-y;
+}
+
+element.style {
+    margin-top: -100px;
+}
+
+/* */
 
 img {
     margin-top: 4px;
@@ -55,8 +253,6 @@ img[alt~='portrait'] {
     object-fit: cover;
 }
 
-/**/
-
 /* add banner to image */
 img[alt="banner"] {
     position: absolute;
@@ -103,7 +299,6 @@ img[alt="banner"] {
 }
 
 
-/*  */
 
 /*Image descriptions */
 .image-embed[src*="#cap"]::after {
@@ -117,187 +312,6 @@ img[alt="banner"] {
     text-align: center;
 }
 
-/*
-------------------------------- Footnote custom Cornell -------------------------------
-*/
-
-.cornell .footnotes {
-    font-size: 18px;
-}
-
-.cornell .footnotes>hr{
-  background-color: red !important;
-  height: 2.5rem;
-  visibility: hidden;
-
-}
-
-/*Subtitle Footnote Summary Cornell Note*/
-.cornell .footnotes>hr:after{
-  content: "Resumen"; 
-  border-bottom: 2px dashed orangered;
-  visibility: visible;
-  font-size: 23px;
-  padding: 0.2rem;
-  padding-left: 0.1rem;
-}
-
-
-.cornell .footnotes>hr:before{
-  visibility: hidden;
-
-  display: none;
-}
-/*End footnote*/
-
-.cornell-clean .markdown-embed-title
-{
-  display: none;
-}
-
-
-
-/*
-List bullet hidde FIX: TODO
-*/
-.cornell .list-bullet{ 
-  display: none;
-}
-
-
-/*
--------------------------------Footnets-------------------------------
-*/
-
-
-/*
-    clean-embeds.css snippet  2021-08-24 Matthias C. Hormann (Moonbase59)
-*/
-
-
-.cornell .clean-embeds{
-    --embed-background:inherit;
-    --embed-border-left:0px solid var(--interactive-accent);
-    --embed-border-right:none;
-    --embed-border-top:none;
-    --embed-border-bottom:none;
-    --embed-padding:0 0 0 0;
-    --embed-font-style:inherit
-}
-.cornell .clean-embeds .markdown-rendered .markdown-embed{
-    max-width:100%
-}
-.cornell .clean-embeds .markdown-rendered .markdown-embed .markdown-rendered{
-    padding-left:0
-}
-.cornell .clean-embeds .markdown-embed-link{
-    visibility:hidden
-}
-/*Clean Embeds*/
-
-/*
-Desc: Style cornell-notes in Obsidian based on plugin Timeline CSS. 
-Mod Cornell Vault: Jose Moruno Cadima <sniferl4bs> youtube.com/sniferl4bs
-
-*/
-
-.cornell.spaced-lines ul:not(ul ul) > li:nth-child(3n) p {
-  line-height: 1.7rem;
-}
-
-.cornell {
-  --cornell-active-color: var(--background-modifier-success);
-}
-
-.cornell.active-color-background-modifier-success {
-  --cornell-active-color: var(--background-modifier-success);
-}
-
-.cornell ul:not(ul ul) {
-  display: grid;
-  grid-template-columns: auto auto 1fr;
-  column-gap: 0.9rem;
-  margin: 2.0rem 0;
-}
-.cornell ul:not(ul ul) > li {
-  list-style: none;
-}
-.cornell ul:not(ul ul) > li > *:first-child {
-  margin-top: 0;
-}
-.cornell ul:not(ul ul) > li > *:last-child {
-  margin-bottom: 0;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n), .cornell ul:not(ul ul) > li:nth-child(3n+2) {
-  grid-column: 3;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n+1), .cornell ul:not(ul ul) > li:nth-child(3n+2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.4em 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n+1) > *, .cornell ul:not(ul ul) > li:nth-child(3n+2) > * {
-  font-size: 1.0rem;
-  font-weight: bold;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n+1) {
-  grid-column: 1;
-  position: relative;
-  justify-self: right;
-  text-align: right;
-}
-
-.cornell ul:not(ul ul) > li:nth-child(3n+1)::before {
-  background-color: var(--background-primary);
-}
-.cornell ul:not(ul ul) > li:nth-child(3n+1)::after {
-  background-color: var(--text-normal);
-  opacity: 0.25;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n) {
-  position: relative;
-  margin-bottom: 2.7rem;
-  padding-top: 0.3em;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n)::after {
-  content: "";
-  position: absolute;
-  border-bottom: 0.1rem dashed var(--text-normal);
-  opacity: 0.1;
-  width: 100%;
-  left: 0;
-  bottom: -2.25rem;
-  transform: translateY(50%);
-}
-.cornell ul:not(ul ul) > li:nth-child(3n):last-child {
-  margin-bottom: 0.4em;
-}
-.cornell ul:not(ul ul) > li:nth-child(3n):last-child::after {
-  display: none;
-}
-/*
-Middle Line
-*/
-.cornell ul:not(ul ul)::before {
-  content: "";
-  height: 100%;
-  width: 0.1rem;
-  grid-column: 2/span 1;
-  grid-row-start: 1;
-  grid-row-end: span 1000;
-  background-color: var(--text-normal);
-  opacity: 0.1;
-  opacity: 0.1;
-  width: 0.15rem;
-  background-color: transparent;
-  background-image: linear-gradient(var(--text-normal) 60%, rgba(255, 255, 255, 0) 0%);
-  background-position: right;
-  background-size: 0.15rem 1.5rem;
-  background-repeat: repeat-y;
-}
 
 
 
